@@ -1,0 +1,10 @@
+keys:
+  - &jesse 773DC99EDAF29D356155DC91269CF32D790D1789
+  - &dinar-persistent-gamma age1s3tnehfphy56y0wr4qgqevw6hjtynrvppd00fr2yn4wp2v5jp3ns78r9fj
+creation_rules:
+  - path_regex: nixosConfigurations/dinar-persistent-gamma/secrets/[^/]+\.yaml$
+    key_groups:
+      - pgp:
+        - *jesse
+        age:
+        - *dinar-persistent-gamma
