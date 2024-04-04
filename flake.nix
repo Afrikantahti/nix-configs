@@ -19,11 +19,11 @@
     inherit (self) outputs;
   in {
     nixosConfigurations = {
-      pxe-server = nixpkgs.lib.nixosSystem {
+      dinar-persistent-gamma = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs outputs;};
         modules = [
-          ./nixosConfigurations/pxe-server
+          ./nixosConfigurations/dinar-persistent-gamma
           nixie.nixosModules.nixie
           nixobolus.nixosModules.homestakeros
           sops-nix.nixosModules.sops
